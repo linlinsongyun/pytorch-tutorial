@@ -46,6 +46,7 @@ for epoch in range(num_epochs):
 
 # Plot the graph
 predicted = model(torch.from_numpy(x_train)).detach().numpy()
+# detach从原来的节点中分离，但是也保存下来了，节省内存
 plt.plot(x_train, y_train, 'ro', label='Original data')
 plt.plot(x_train, predicted, label='Fitted line')
 plt.legend()
